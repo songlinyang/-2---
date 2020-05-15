@@ -24,7 +24,11 @@ export const patchRequest = function (path,data) {
     return axios.path(backendHost+path,data)
 }
 
-export const getRequest = function (path,data) {
+export const getRequest = function (path) {
+    return axios.get(backendHost + path)
+}
+
+export const getRequestWithParam = function (path,data) {
     return axios.get(backendHost + path,{
         params:data
     });

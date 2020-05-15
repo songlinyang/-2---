@@ -10,6 +10,11 @@ const routes = [
     component: () => import('@/views/login')
   },
   {
+    path: '',
+    name: 'Login',
+    component: ()=> import('@/views/login')
+  },
+  {
     path: '/',
     name: 'Home',
     props : {
@@ -20,14 +25,22 @@ const routes = [
       path: 'service',
       name: 'service',
       component: () => import('../views/service')
-    },
-    {
-      path: '',
-      name: 'service',
-      component: ()=> import('../views/service')
-    }
-  ]
+    }]
   },
+  {
+    path: '/',
+    name: 'Home',
+    props : {
+      menu : 'interface'
+    },
+    component: () => import('@/views/Home.vue'),
+    children : [{ 
+      path: 'interface',
+      name: 'interface',
+      component: () => import('../views/interface')
+      }]
+  },
+  
   {
     path: '/',
     name: 'Home',

@@ -78,7 +78,7 @@ export default {
           login(this.loginForm.username,this.loginForm.password).then(data => {
             let success = data.data.success
             if (success){
-              this.$router.push("/")
+              this.$router.push("/service")
             }else{
                this.$notify.error({
                 title: '错误',

@@ -1,31 +1,29 @@
-import {getRequest,postRequest,deleteRequest,patchRequest} from './common'
+import {getRequest,postRequest,deleteRequest,putRequest} from './common'
 
 
 //获取全部service数据
-export const getAllService = function (username,password) {
-    return postRequest('user/login/',{
-        username: username,
-        password: password
-    });
+export const getAllService = function () {
+    return getRequest('services/')
 }
 
-
-//修改
-export const register = function (username,password) {
-    return postRequest('user/register/',{
-        username: username,
-        password: password
-    });
+//获取单个service数据
+export const getSingleService = function (serviceId) {
+    return getRequest(`service/${serviceId}/`)
 }
 
-//获取用户信息
-export const getLoginUserInfo = function () {
-    return getRequest('user/info/');
+//创建服务
+export const addService = function (data) {
+    return postRequest('services/',data);
 }
 
-//退出登录
-export const logout = function () { 
-    return getRequest(''); 
+//删除服务
+export const deleteService = function (serviceId) {
+    return deleteRequest(`service/${serviceId}/`)
+}
+
+//更新内容
+export const updateService = function (serviceId,data) { 
+    return putRequest(`service/${serviceId}/`,data) 
     
 }
 

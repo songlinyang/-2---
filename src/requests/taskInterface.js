@@ -22,8 +22,8 @@ export const deleteTask = function (taskId) {
 }
 
 //更新内容
-export const updateTask = function (taskId,data) { 
-    return putRequest(`task/${taskId}/`,data) 
-    
+export const updateTask = function (taskId,data) {
+    return putRequest(`task/${taskId}/`,data)
+
 }
 

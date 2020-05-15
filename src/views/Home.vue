@@ -17,6 +17,10 @@
         <i class="el-icon-menu"></i>
         <span slot="title">服务</span>
       </el-menu-item>
+      <el-menu-item class="menu" index="interface">
+        <i class="el-icon-menu"></i>
+        <span slot="title">接口</span>
+      </el-menu-item>
       <el-menu-item class="menu" index="task">
         <i class="el-icon-menu"></i>
         <span slot="title">任务</span>
@@ -68,6 +72,9 @@ export default {
         case "service":
           this.$router.push("/service")
           break;
+        case "interface":
+          this.$router.push("/interface")
+          break;
         case "task":
           this.$router.push("/task")
           break;
@@ -83,6 +90,11 @@ export default {
   created() {
     this.activeIndex = this.menu
     
+  },
+  watch:{
+      menu:function () {
+          this.activeIndex = this.menu
+      }
   }
 }
 </script>
